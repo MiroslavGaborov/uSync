@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <files />
+  <info>
+    <package>
+      <name>Umbraco8-starter-setup</name>
+      <version>1.0.0</version>
+      <iconUrl></iconUrl>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>http://umbraco-v8.local/</url>
+      <requirements type="Strict">
+        <major>8</major>
+        <minor>0</minor>
+        <patch>1</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Dev</name>
+      <website>http://umbraco-v8.local/</website>
+    </author>
+    <contributors></contributors>
+    <readme><![CDATA[]]></readme>
+  </info>
+  <DocumentTypes>
+    <DocumentType Folders="Compositions">
+      <Info>
+        <Name>Footer</Name>
+        <Alias>footer</Alias>
+        <Icon>icon-arrow-down color-black</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions />
+        <AllowedTemplates />
+        <DefaultTemplate></DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Copyright Text</Name>
+          <Alias>copyrightText</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Footer</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The site copyright text.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>16</Id>
+          <Caption>Footer</Caption>
+          <SortOrder>99</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType Folders="Compositions">
+      <Info>
+        <Name>Header</Name>
+        <Alias>header</Alias>
+        <Icon>icon-arrow-up color-black</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions />
+        <AllowedTemplates />
+        <DefaultTemplate></DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Logo</Name>
+          <Alias>logo</Alias>
+          <Type>Umbraco.MediaPicker</Type>
+          <Definition>5625a22a-8a58-4633-8141-25dc8ee2e903</Definition>
+          <Tab>Header</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The site logo image.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>15</Id>
+          <Caption>Header</Caption>
+          <SortOrder>98</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType Folders="Pages">
+      <Info>
+        <Name>Home</Name>
+        <Alias>home</Alias>
+        <Icon>icon-home color-green</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>True</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions>
+          <Composition>page</Composition>
+          <Composition>header</Composition>
+          <Composition>footer</Composition>
+          <Composition>siteSettings</Composition>
+        </Compositions>
+        <AllowedTemplates>
+          <Template>Home</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Home</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>error404</DocumentType>
+      </Structure>
+      <GenericProperties />
+      <Tabs />
+    </DocumentType>
+    <DocumentType Folders="Compositions">
+      <Info>
+        <Name>Page</Name>
+        <Alias>page</Alias>
+        <Icon>icon-document</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions />
+        <AllowedTemplates />
+        <DefaultTemplate></DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Page Title</Name>
+          <Alias>pageTitle</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The page title.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Seo Title</Name>
+          <Alias>seoTitle</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The page SEO title.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Seo Description</Name>
+          <Alias>seoDescription</Alias>
+          <Type>Umbraco.TextArea</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>1</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The page SEO description.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Seo Keywords</Name>
+          <Alias>seoKeywords</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>2</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The page SEO keywords.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Hide From Search Engines</Name>
+          <Alias>hideFromSearchEngines</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>3</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Hides page from search engines like Google, Yahoo etc.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Sitemap Change Frequency</Name>
+          <Alias>sitemapChangeFrequency</Alias>
+          <Type>Umbraco.DropDown.Flexible</Type>
+          <Definition>4961a9bc-42d6-45fb-8acc-f757ff1b99eb</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>4</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The expected change frequency of the page, associated with the sitemap used by search engines.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Sitemap Priority</Name>
+          <Alias>sitemapPriority</Alias>
+          <Type>Umbraco.DropDown.Flexible</Type>
+          <Definition>ed34a4ff-f420-4d56-9109-98b5f430d455</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>5</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Priority of the page, associated with the sitemap used by search engines.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Alternate Languages</Name>
+          <Alias>alternateLanguages</Alias>
+          <Type>Umbraco.MultipleTextstring</Type>
+          <Definition>bc389baf-a208-4f4b-af7e-b56e3bb48927</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>6</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Validation>([a-zA-Z]{2}(-[a-zA-Z]{2})?)?</Validation>
+          <Description><![CDATA[Language codes (en-US, en-GB etc).]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Canonical Link</Name>
+          <Alias>canonicalLink</Alias>
+          <Type>Umbraco.MultiUrlPicker</Type>
+          <Definition>9bbeb053-ebaf-40d0-a77e-e1760a5c6096</Definition>
+          <Tab>SEO</Tab>
+          <SortOrder>7</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The page canonical link.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Hide From Site Navigation</Name>
+          <Alias>umbracoNaviHide</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[If selected, the node will be hidden from site navigation.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Hide From Sitemap</Name>
+          <Alias>hideFromSitemap</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>1</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[If selected, the node will be hidden from the sitemap.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Internal Redirect</Name>
+          <Alias>umbracoRedirect</Alias>
+          <Type>Umbraco.ContentPicker</Type>
+          <Definition>fd1e0da5-5606-4862-b679-5d0cf3a52a59</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>3</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Redirects to selected Umbraco node.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>External Redirect</Name>
+          <Alias>externalRedirect</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>4</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Validation>https?://[a-zA-Z0-9-.]+.[a-zA-Z]{2,}</Validation>
+          <Description><![CDATA[Redirects to provided external URL.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>URL Name</Name>
+          <Alias>umbracoUrlName</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>5</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Enables overriding default URL of the node.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>URL Alias</Name>
+          <Alias>umbracoUrlAlias</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>6</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Alternative URLs of the node. Separate with commas.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Hide From Site Search</Name>
+          <Alias>hideFromSiteSearch</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab>Settings</Tab>
+          <SortOrder>2</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Hides page from the site search.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>12</Id>
+          <Caption>Content</Caption>
+          <SortOrder>0</SortOrder>
+        </Tab>
+        <Tab>
+          <Id>13</Id>
+          <Caption>SEO</Caption>
+          <SortOrder>96</SortOrder>
+        </Tab>
+        <Tab>
+          <Id>14</Id>
+          <Caption>Settings</Caption>
+          <SortOrder>97</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType Folders="Compositions">
+      <Info>
+        <Name>Site Settings</Name>
+        <Alias>siteSettings</Alias>
+        <Icon>icon-settings-alt color-black</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions />
+        <AllowedTemplates />
+        <DefaultTemplate></DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Google Analytics Script Code</Name>
+          <Alias>googleAnalyticsScriptCode</Alias>
+          <Type>Umbraco.TextArea</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>1</SortOrder>
+          <Mandatory>False</Mandatory>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Google Tag Manager Script Code</Name>
+          <Alias>googleTagManagerScriptCode</Alias>
+          <Type>Umbraco.TextArea</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>2</SortOrder>
+          <Mandatory>False</Mandatory>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Google Tag Manager Non-Script Code</Name>
+          <Alias>googleTagManagerNonScriptCode</Alias>
+          <Type>Umbraco.TextArea</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>3</SortOrder>
+          <Mandatory>False</Mandatory>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Robots</Name>
+          <Alias>robots</Alias>
+          <Type>Umbraco.TextArea</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>4</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Content that will be served when Robots.txt is requested.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Canonical Domain</Name>
+          <Alias>canonicalDomain</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>5</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The site canonical domain.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Site Name</Name>
+          <Alias>siteName</Alias>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[The site name.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Hide All Pages From Search Engines</Name>
+          <Alias>hideAllPagesFromSearchEngines</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab>Site Settings</Tab>
+          <SortOrder>6</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[This will create robots meta tag with "noindex,nofollow" value. Note: this should be unchecked on the live site.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>17</Id>
+          <Caption>Site Settings</Caption>
+          <SortOrder>100</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType Folders="Pages">
+      <Info>
+        <Name>Error404</Name>
+        <Alias>error404</Alias>
+        <Icon>icon-application-error color-red</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions>
+          <Composition>page</Composition>
+        </Compositions>
+        <AllowedTemplates>
+          <Template>Error404</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Error404</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties />
+      <Tabs />
+    </DocumentType>
+    <DocumentType Folders="Pages">
+      <Info>
+        <Name>Search Results</Name>
+        <Alias>searchResults</Alias>
+        <Icon>icon-search color-green</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Compositions>
+          <Composition>page</Composition>
+        </Compositions>
+        <AllowedTemplates>
+          <Template>SearchResults</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>SearchResults</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Items Per Page</Name>
+          <Alias>itemsPerPage</Alias>
+          <Type>Umbraco.Integer</Type>
+          <Definition>3009a5d4-eac9-406e-91dd-17f55691d24c</Definition>
+          <Tab>Content</Tab>
+          <SortOrder>1</SortOrder>
+          <Mandatory>False</Mandatory>
+          <Description><![CDATA[Note: Default value is 10.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>20</Id>
+          <Caption>Content</Caption>
+          <SortOrder>0</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+  </DocumentTypes>
+  <Templates>
+    <Template>
+      <Name>Home</Name>
+      <Alias>Home</Alias>
+      <Design><![CDATA[@inherits UmbracoViewPage<HomeViewModel>
+
+<p>Homepage</p>
+]]></Design>
+    </Template>
+    <Template>
+      <Name>Error404</Name>
+      <Alias>Error404</Alias>
+      <Design><![CDATA[@inherits UmbracoViewPage<Error404ViewModel>
+]]></Design>
+    </Template>
+    <Template>
+      <Name>_Layout</Name>
+      <Alias>_Layout</Alias>
+      <Design><![CDATA[@inherits UmbracoViewPage<PageViewModel>
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	@{
+		Html.RenderAction<LayoutController>(c => nameof(c.MetaTags), new { viewModel = Model.MetaTags });
+	}
+</head>
+<body>
+@{
+	Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
+}
+<div>
+	@RenderBody()
+</div>
+@{
+	Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
+}
+</body>
+</html>
+]]></Design>
+    </Template>
+    <Template>
+      <Name>Search Results</Name>
+      <Alias>SearchResults</Alias>
+      <Design><![CDATA[@inherits UmbracoViewPage<SearchResultsViewModel>
+
+@{
+	Html.RenderAction<SearchListingController>(c => nameof(c.Search), new { query = Model.Query, page = Model.Page, itemsPerPage = Model.ItemsPerPage });
+}
+]]></Design>
+    </Template>
+  </Templates>
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes>
+    <DataType Name="DDL - Sitemap Change Frequency" Id="Umbraco.DropDown.Flexible" Definition="4961a9bc-42d6-45fb-8acc-f757ff1b99eb" DatabaseType="Nvarchar" Configuration="{&quot;Multiple&quot;:false,&quot;Items&quot;:[{&quot;id&quot;:1,&quot;value&quot;:&quot;always&quot;},{&quot;id&quot;:2,&quot;value&quot;:&quot;hourly&quot;},{&quot;id&quot;:3,&quot;value&quot;:&quot;daily&quot;},{&quot;id&quot;:4,&quot;value&quot;:&quot;weekly&quot;},{&quot;id&quot;:5,&quot;value&quot;:&quot;monthly&quot;},{&quot;id&quot;:6,&quot;value&quot;:&quot;yearly&quot;},{&quot;id&quot;:7,&quot;value&quot;:&quot;never&quot;}]}" Folders="DDL" />
+    <DataType Name="DDL - Sitemap Priority" Id="Umbraco.DropDown.Flexible" Definition="ed34a4ff-f420-4d56-9109-98b5f430d455" DatabaseType="Nvarchar" Configuration="{&quot;Multiple&quot;:false,&quot;Items&quot;:[{&quot;id&quot;:1,&quot;value&quot;:&quot;0.0&quot;},{&quot;id&quot;:2,&quot;value&quot;:&quot;0.1&quot;},{&quot;id&quot;:3,&quot;value&quot;:&quot;0.2&quot;},{&quot;id&quot;:4,&quot;value&quot;:&quot;0.3&quot;},{&quot;id&quot;:5,&quot;value&quot;:&quot;0.4&quot;},{&quot;id&quot;:6,&quot;value&quot;:&quot;0.5&quot;},{&quot;id&quot;:7,&quot;value&quot;:&quot;0.6&quot;},{&quot;id&quot;:8,&quot;value&quot;:&quot;0.7&quot;},{&quot;id&quot;:9,&quot;value&quot;:&quot;0.8&quot;},{&quot;id&quot;:10,&quot;value&quot;:&quot;0.9&quot;},{&quot;id&quot;:11,&quot;value&quot;:&quot;1.0&quot;}]}" Folders="DDL" />
+    <DataType Name="Image Picker" Id="Umbraco.MediaPicker" Definition="5625a22a-8a58-4633-8141-25dc8ee2e903" DatabaseType="Ntext" Configuration="{&quot;Multiple&quot;:false,&quot;OnlyImages&quot;:true,&quot;DisableFolderSelect&quot;:true,&quot;StartNodeId&quot;:null}" Folders="Media+Pickers" />
+    <DataType Name="Url Picker" Id="Umbraco.MultiUrlPicker" Definition="9bbeb053-ebaf-40d0-a77e-e1760a5c6096" DatabaseType="Ntext" Configuration="{&quot;MinNumber&quot;:0,&quot;MaxNumber&quot;:1}" />
+    <DataType Name="Textstring Multiple" Id="Umbraco.MultipleTextstring" Definition="bc389baf-a208-4f4b-af7e-b56e3bb48927" DatabaseType="Ntext" Configuration="{&quot;Minimum&quot;:0,&quot;Maximum&quot;:0}" />
+    <DataType Name="Non-negative Numeric" Id="Umbraco.Integer" Definition="3009a5d4-eac9-406e-91dd-17f55691d24c" DatabaseType="Integer" Configuration="{&quot;min&quot;:0}" Folders="Numerics" />
+  </DataTypes>
+  <Actions />
+</umbPackage>

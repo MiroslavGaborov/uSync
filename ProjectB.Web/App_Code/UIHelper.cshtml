@@ -1,0 +1,47 @@
+﻿@using System.Web.Optimization
+@using ProjectB.Core.Extensions
+@using ProjectB.Core.ViewModels.Shared
+
+@helper RenderScripts(bool isDefer, params string[] scripts)
+{
+	@Scripts.RenderFormat(string.Format("<script {0} type='text/javascript' src='{{0}}'></script>", isDefer ? "defer" : string.Empty), scripts)
+}
+
+@helper PrintCode(System.Web.Mvc.HtmlHelper htmlHelper, string code)
+{
+	if (string.IsNullOrWhiteSpace(code))
+	{
+		return;
+	}
+
+	@htmlHelper.Raw(code)
+}
+
+@helper RenderText(System.Web.Mvc.HtmlHelper htmlHelper, string text, string tagName, string cssClass)
+{
+	if (string.IsNullOrWhiteSpace(text))
+	{
+		return;
+	}
+
+	var cssClassAttr = string.IsNullOrWhiteSpace(cssClass) ? string.Empty : string.Format("class=\"{0}\"", cssClass);
+	@htmlHelper.Raw(string.Format("<{0} {1}>{2}</{0}>", tagName, cssClassAttr, text))
+}
+
+@helper RenderImage(ImageViewModel image, string cssClass)
+{
+	if (image == null)
+	{
+		return;
+	}
+
+	<img class="@cssClass" src="@image.Url" alt="@image.AlternateText" />
+}
+
+@helper RenderLink(LinkViewModel link, string cssClass)
+{
+	if (link != null)
+	{
+		<a href="@link.Url" target="@link.Target" class="@cssClass">@link.Content</a>
+	}
+}
