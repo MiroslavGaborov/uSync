@@ -1,0 +1,102 @@
+﻿<div ng-controller="uSyncExportDashboardController as vm">
+    <uSync-expansion-licence product="'exporter'" version="'8.0.0'"></uSync-expansion-licence>
+    <umb-box>
+        <umb-box-header title-key="usyncexport_dashboardTitle"
+                        description-key="usyncexport_dashboardDesc">
+        </umb-box-header>
+        <!--
+            <umb-box-content>
+                <localize key="usyncexport_dashboardIntro">If you have a sync-pack you can import it by using the button below.</localize>
+            </umb-box-content>
+        -->
+        <umb-box-content ng-if="vm.licenced">
+            <umb-button action="vm.openImportDialog()"
+                        type="button"
+                        button-style="action"
+                        label-key="usyncexport_importMenu">
+            </umb-button>
+        </umb-box-content>
+    </umb-box>
+
+    <umb-box ng-if="vm.licenced">
+        <umb-box-header title-key="usyncexport_createTitle"
+                        description-key="usyncexport_dashboardCreate">
+            <button class="btn btn-link usync-box-help-icon" ng-click="vm.showHelp('Create a sync-pack help', 'export');">
+                <i class="icon icon-help-alt"></i>
+            </button>
+        </umb-box-header>
+        <umb-box-content class="flex justify-between">
+            <div class="flex flex-wrap exporter-button-list">
+                <div ng-repeat="exporter in vm.exporters" ng-class="{'exporter-seperator' : exporter.Seperator }">
+                    <button ng-if="!exporter.Seperator" class="btn btn-default usync-exporter-button" 
+                            ng-click="vm.pickDataTypes(exporter.Type, exporter.Section, exporter.BlockContainers)">
+                        <i class="icon icon-add"></i> {{exporter.Name}}
+                    </button>
+                </div>
+            </div>
+            <div class="usync-right-toggles">
+                <umb-toggle checked="vm.includeFiles" on-click="vm.includeFiles = !vm.includeFiles"
+                            show-labels="true"
+                            label-on="Include templates"
+                            label-off="Exclude templates"
+                            label-posistion="right"></umb-toggle>
+                <umb-toggle checked="vm.includeMedia" on-click="vm.includeMedia = !vm.includeMedia"
+                            show-labels="true"
+                            label-on="Include media files"
+                            label-off="Exclude media files"
+                            label-posistion="right"></umb-toggle>
+                <umb-toggle checked="vm.includeLinked" on-click="vm.includeLinked = !vm.includeLinked"
+                            show-labels="true"
+                            label-on="Include linked items"
+                            label-off="Exclude linked items"
+                            label-posistion="right"></umb-toggle>
+
+            </div>
+        </umb-box-content>
+        <umb-box-content>
+            <em class="text-muted">
+                <localize key="usyncexport_dashboardDepend"></localize>
+            </em>
+            <div class="usync-list" ng-if="vm.selection.length > 0">
+                <div class="usync-list-item usync-list-header">
+                    <div></div>
+                    <div><localize key="general_type">Type</localize></div>
+                    <div><localize key="general_name">Name</localize></div>
+                    <div class="usync-list-toggle"><localize key="usyncexport_dependencies">Dependencies</localize></div>
+                    <div class="usync-list-toggle"><localize key="usyncexport_children">Children</localize></div>
+                    <div class="usync-list-toggle"><localize key="usyncexport_ancestors">Ancestors</localize></div>
+                    <div></div>
+                </div>
+
+                <div ng-repeat="item in vm.selection" class="usync-list-item">
+                    <div><i class="icon {{item.icon}}"></i></div>
+                    <div><strong>{{item.nodeType}}</strong></div>
+                    <div>{{item.name}}</div>
+                    <div class="usync-list-toggle"><umb-toggle checked="item.dependencies" on-click="item.dependencies = !item.dependencies" /></div>
+                    <div class="usync-list-toggle"><umb-toggle checked="item.children" on-click="item.children = !item.children" /></div>
+                    <div class="usync-list-toggle"><umb-toggle checked="item.ancestors" on-click="item.ancestors = !item.ancestors" /></div>
+                    <div class="usync-list-toggle"><button class="btn btn-link" ng-click="vm.remove(item.id)">Remove</button></div>
+                </div>
+            </div>
+
+            <div ng-if="vm.selection.length > 0">
+
+                <div class="flex justify-between">
+                    <umb-button action="vm.create()"
+                                label-key="actions_create"
+                                type="button"
+                                state="vm.createState"
+                                button-style="action"></umb-button>
+
+                    <div>{{vm.update.Message}} {{vm.update.Count}}/{{vm.update.Total}}</div>
+                </div>
+
+            </div>
+        </umb-box-content>
+    </umb-box>
+
+    <umb-overlay ng-if="vm.help.show"
+                 model="vm.help"
+                 view="vm.help.view"
+                 position="right"></umb-overlay>
+</div>
